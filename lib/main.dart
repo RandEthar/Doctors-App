@@ -13,6 +13,7 @@ class DoctorsApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Doctors App',
       theme: ThemeData.light().copyWith(scaffoldBackgroundColor: Colors.white),
     onGenerateRoute: onGenerateRoute,
