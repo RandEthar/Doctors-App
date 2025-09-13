@@ -15,6 +15,19 @@ class AppTextStyle {
 
     color: Colors.black,
   );
+   static TextStyle regular14 = GoogleFonts.openSans(
+    fontSize:14,
+    fontWeight: FontWeight.w400,
+
+    color: Colors.black,
+  );
+ 
+   static TextStyle bold16 = GoogleFonts.openSans(
+    fontSize:16,
+    fontWeight: FontWeight.bold,
+
+    color: Colors.black,
+  );
   static TextStyle medium16 = GoogleFonts.openSans(
     fontSize: 16,
     fontWeight: FontWeight.w500,

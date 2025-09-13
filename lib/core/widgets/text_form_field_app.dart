@@ -11,7 +11,7 @@ class TextFormFieldApp extends StatelessWidget {
     return TextFormField(
       decoration: InputDecoration(
           filled: true,
-          fillColor: AppColor.greyBackground,
+          fillColor: AppColor.backgroundGrey,
           hintText: hintText,
           hintStyle: AppTextStyle.regular16,
           suffixIcon: suffixIcon,

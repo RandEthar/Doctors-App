@@ -1,5 +1,6 @@
 import 'package:doctors_app/core/util/app_router.dart';
-import 'package:doctors_app/feature/auth/presentation/views/widgets/sigin_view.dart';
+import 'package:doctors_app/feature/auth/presentation/views/widgets/sigin_view_email.dart';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,7 +18,7 @@ class DoctorsApp extends StatelessWidget {
       title: 'Doctors App',
       theme: ThemeData.light().copyWith(scaffoldBackgroundColor: Colors.white),
     onGenerateRoute: onGenerateRoute,
-    initialRoute: SiginView.routeName,
+    initialRoute: SiginViewEmail.routeName,
     );
   }
 }

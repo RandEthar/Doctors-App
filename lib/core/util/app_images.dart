@@ -2,9 +2,21 @@
 class Assets {
   Assets._();
   
+  /// Assets for imagesApple
+  /// assets/images/_Apple.svg
+  static const String imagesApple = "assets/images/_Apple.svg";
+
   /// Assets for imagesArrow
   /// assets/images/Arrow.svg
   static const String imagesArrow = "assets/images/Arrow.svg";
+
+  /// Assets for imagesFacebook
+  /// assets/images/_Facebook.svg
+  static const String imagesFacebook = "assets/images/_Facebook.svg";
+
+  /// Assets for imagesGoogle
+  /// assets/images/_Google.svg
+  static const String imagesGoogle = "assets/images/_Google.svg";
 
   /// Assets for imagesLogo
   /// assets/images/Logo.png

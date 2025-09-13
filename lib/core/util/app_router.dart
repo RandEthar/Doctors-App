@@ -1,14 +1,15 @@
 
-import 'package:doctors_app/feature/auth/presentation/views/widgets/sigin_view.dart';
 
+
+import 'package:doctors_app/feature/auth/presentation/views/widgets/sigin_view_email.dart';
 import 'package:flutter/material.dart';
 
 
 Route<dynamic>? onGenerateRoute(RouteSettings settings) {
   switch (settings.name) {
-    case SiginView.routeName:
+    case SiginViewEmail.routeName:
       return MaterialPageRoute(
-        builder: (context) => const  SiginView(),
+        builder: (context) => const  SiginViewEmail(),
       );
   
     default:

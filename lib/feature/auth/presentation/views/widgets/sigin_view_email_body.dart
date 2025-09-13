@@ -1,16 +1,21 @@
+import 'package:doctors_app/core/util/app_colors.dart';
 import 'package:doctors_app/core/util/app_images.dart';
 import 'package:doctors_app/core/util/app_text_style.dart';
+import 'package:doctors_app/core/widgets/button_app.dart';
 import 'package:doctors_app/core/widgets/text_form_field_app.dart';
+import 'package:doctors_app/feature/auth/presentation/views/widgets/create_account_widget.dart';
+import 'package:doctors_app/feature/auth/presentation/views/widgets/custom_or_widget.dart';
+import 'package:doctors_app/feature/auth/presentation/views/widgets/social_login_button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class SiginViewBody extends StatelessWidget {
-  const SiginViewBody({super.key});
+class SiginViewEmailBody extends StatelessWidget {
+  const SiginViewEmailBody({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24,vertical: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -36,15 +41,25 @@ class SiginViewBody extends StatelessWidget {
             'Email Address',
             style: AppTextStyle.medium16,
           ),
-  const SizedBox(
+          const SizedBox(
             height: 12,
           ),
-        const  TextFormFieldApp(hintText: "Enter email address",),
-           const SizedBox(
+          const TextFormFieldApp(
+            hintText: "Enter email address",
+          ),
+          const SizedBox(
             height: 32,
           ),
+          const ButtonApp(text: "Continue"),
+          const SizedBox(
+            height: 32,
+          ),
+          const CreateAccountWidget(),
+         const CustomOrWidget(),
+        const SocialLoginButtonWidget()
         ],
       ),
     );
   }
 }
+
