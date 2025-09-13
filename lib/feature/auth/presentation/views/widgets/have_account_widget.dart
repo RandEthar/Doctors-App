@@ -1,13 +1,10 @@
-
 import 'package:doctors_app/core/util/app_colors.dart';
 import 'package:doctors_app/core/util/app_text_style.dart';
-import 'package:doctors_app/feature/auth/presentation/views/sign_up_view_detuils.dart';
+import 'package:doctors_app/feature/auth/presentation/views/sigin_view_email.dart';
 import 'package:flutter/material.dart';
 
-class CreateAccountWidget extends StatelessWidget {
-  const CreateAccountWidget({
-    super.key,
-  });
+class HaveAccountWidget extends StatelessWidget {
+  const HaveAccountWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,18 +13,18 @@ class CreateAccountWidget extends StatelessWidget {
       children: [
            Text(
       textAlign: TextAlign.center,
-    'Don\'t have an account?',
+    'Already have an account? ',
       style: AppTextStyle.regular14.copyWith(
         color: AppColor.darkGrey 
       ),
     ),
         GestureDetector(
-            onTap: (){
-            Navigator.pushNamed(context, SignUpView.routeName);
+          onTap: (){
+            Navigator.pushNamed(context, SiginViewEmail.routeName);
           },
           child: Text(
                 textAlign: TextAlign.center,
-              ' Create Account',
+              ' Sign In',
                 style: AppTextStyle.regular16.copyWith(
                  color:   const Color(0xFF32384B),
                 ),

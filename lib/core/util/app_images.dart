@@ -22,8 +22,16 @@ class Assets {
   /// assets/images/Logo.png
   static const String imagesLogo = "assets/images/Logo.png";
 
+  /// Assets for imagesNonVisable
+  /// assets/images/nonVisable.svg
+  static const String imagesNonVisable = "assets/images/nonVisable.svg";
+
   /// Assets for imagesSplash
   /// assets/images/splash.png
   static const String imagesSplash = "assets/images/splash.png";
+
+  /// Assets for imagesVisible
+  /// assets/images/visible.svg
+  static const String imagesVisible = "assets/images/visible.svg";
 }
 

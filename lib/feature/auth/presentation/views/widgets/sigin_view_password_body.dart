@@ -1,15 +1,17 @@
+
+
 import 'package:doctors_app/core/util/app_text_style.dart';
 import 'package:doctors_app/core/widgets/button_app.dart';
-import 'package:doctors_app/core/widgets/text_form_field_app.dart';
-import 'package:doctors_app/feature/auth/presentation/views/sigin_view_password.dart';
+
 import 'package:doctors_app/feature/auth/presentation/views/widgets/create_account_widget.dart';
 import 'package:doctors_app/feature/auth/presentation/views/widgets/custom_or_widget.dart';
+import 'package:doctors_app/feature/auth/presentation/views/widgets/custom_text_form_field_password.dart';
 import 'package:doctors_app/feature/auth/presentation/views/widgets/pop_widget.dart';
 import 'package:doctors_app/feature/auth/presentation/views/widgets/social_login_button_widget.dart';
 import 'package:flutter/material.dart';
 
-class SiginViewEmailBody extends StatelessWidget {
-  const SiginViewEmailBody({super.key});
+class SiginViewPasswordBody extends StatelessWidget {
+  const  SiginViewPasswordBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +20,7 @@ class SiginViewEmailBody extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-        PopWidget(),
+      const   PopWidget(),
           const SizedBox(
             height: 8,
           ),
@@ -32,21 +34,28 @@ class SiginViewEmailBody extends StatelessWidget {
             height: 80,
           ),
           Text(
-            'Email Address',
+           'Password',
             style: AppTextStyle.medium16,
           ),
           const SizedBox(
             height: 12,
           ),
-          const TextFormFieldApp(
-            hintText: "Enter email address",
-          ),
+       const   CustomTextFormFieldPassword(text: "Enter Password" ,),
           const SizedBox(
+            height: 16,
+          ),
+          Align(
+            alignment: Alignment.centerRight,
+            child: Text(  
+              textAlign: TextAlign.end,
+              'Forgot password?',style: AppTextStyle.medium16.copyWith(
+              color:const Color(0xFF32384B),
+            ),),
+          ),
+           const SizedBox(
             height: 32,
           ),
-           ButtonApp(text: "Continue",onTap: () {
-            Navigator.pushNamed(context, SiginViewPassword.routeName);
-          },),
+          const ButtonApp(text: "Sign In"),
           const SizedBox(
             height: 32,
           ),
@@ -58,4 +67,5 @@ class SiginViewEmailBody extends StatelessWidget {
     );
   }
 }
+
 

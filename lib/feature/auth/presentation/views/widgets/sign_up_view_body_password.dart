@@ -1,15 +1,16 @@
+import 'package:doctors_app/feature/auth/presentation/views/widgets/custom_text_form_field_password.dart';
+import 'package:flutter/material.dart';
 import 'package:doctors_app/core/util/app_text_style.dart';
 import 'package:doctors_app/core/widgets/button_app.dart';
-import 'package:doctors_app/core/widgets/text_form_field_app.dart';
-import 'package:doctors_app/feature/auth/presentation/views/sigin_view_password.dart';
-import 'package:doctors_app/feature/auth/presentation/views/widgets/create_account_widget.dart';
+
+
 import 'package:doctors_app/feature/auth/presentation/views/widgets/custom_or_widget.dart';
+import 'package:doctors_app/feature/auth/presentation/views/widgets/have_account_widget.dart';
 import 'package:doctors_app/feature/auth/presentation/views/widgets/pop_widget.dart';
 import 'package:doctors_app/feature/auth/presentation/views/widgets/social_login_button_widget.dart';
-import 'package:flutter/material.dart';
 
-class SiginViewEmailBody extends StatelessWidget {
-  const SiginViewEmailBody({super.key});
+class SignUpViewBodyPassword extends StatelessWidget {
+  const SignUpViewBodyPassword({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,39 +19,48 @@ class SiginViewEmailBody extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-        PopWidget(),
+            const   PopWidget(),
           const SizedBox(
             height: 8,
           ),
           Center(
               child: Text(
             textAlign: TextAlign.center,
-            "Sign In",
+            "Set Password",
             style: AppTextStyle.bold24,
           )),
           const SizedBox(
-            height: 80,
+            height:56,
           ),
-          Text(
-            'Email Address',
+           Text(
+              'New Password',
             style: AppTextStyle.medium16,
           ),
           const SizedBox(
             height: 12,
           ),
-          const TextFormFieldApp(
-            hintText: "Enter email address",
+        const   CustomTextFormFieldPassword(text: "New password" ,),
+          const SizedBox(
+            height: 16,
+          ),
+            Text(
+            'Confirm Password',
+            style: AppTextStyle.medium16,
           ),
           const SizedBox(
+            height: 12,
+          ),
+         const   CustomTextFormFieldPassword(text: "Confirm password" ,),
+             const SizedBox(
             height: 32,
           ),
-           ButtonApp(text: "Continue",onTap: () {
-            Navigator.pushNamed(context, SiginViewPassword.routeName);
+           ButtonApp(text:  "Sign Up",onTap: () {
+            // Navigator.pushNamed(context, SiginViewPassword.routeName);
           },),
           const SizedBox(
             height: 32,
-          ),
-          const CreateAccountWidget(),
+          ),const HaveAccountWidget(),
+      
          const CustomOrWidget(),
         const SocialLoginButtonWidget()
         ],
@@ -58,4 +68,3 @@ class SiginViewEmailBody extends StatelessWidget {
     );
   }
 }
-
