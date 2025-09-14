@@ -1,5 +1,8 @@
 import 'package:doctors_app/core/di/dependency_injection.dart';
+import 'package:doctors_app/feature/auth/data/repos/auth_repo_impl.dart';
 import 'package:doctors_app/feature/auth/domain/usecase/signin_with_email_and_pasword_use_cae.dart';
+import 'package:doctors_app/feature/auth/domain/usecase/signup_with_email_and_pasword_use_cae.dart';
+import 'package:doctors_app/feature/auth/presentation/manger/cubit/signup_with_email_and_password_cubit_cubit.dart';
 import 'package:doctors_app/feature/auth/presentation/manger/signIn/signin_with_email_and_password_cubit.dart';
 import 'package:doctors_app/feature/auth/presentation/views/sigin_view_email.dart';
 import 'package:doctors_app/feature/auth/presentation/views/sigin_view_password.dart';
@@ -15,7 +18,8 @@ Route<dynamic>? onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(
         builder: (context) => BlocProvider(
           create: (context) => SigninWithEmailAndPasswordCubit(
-              getIt.get<SignInWithEmailAndPasswordUseCase>()),
+              SignInWithEmailAndPasswordUseCase(
+                  authRepo: getIt.get<AuthRepoImpl>())),
           child: const SiginViewEmail(),
         ),
       );
@@ -29,11 +33,19 @@ Route<dynamic>? onGenerateRoute(RouteSettings settings) {
       );
     case SignUpView.routeName:
       return MaterialPageRoute(
-        builder: (context) => const SignUpView(),
+        builder: (context) => BlocProvider(
+          create: (context) => SignupWithEmailAndPasswordCubit(
+              SignupWithEmailAndPaswordUseCase(
+                  authRepo: getIt.get<AuthRepoImpl>())),
+          child: const SignUpView(),
+        ),
       );
     case SignUpViewPassword.routeName:
       return MaterialPageRoute(
-        builder: (context) => const SignUpViewPassword(),
+        builder: (context) => BlocProvider.value(
+          value : settings.arguments as SignupWithEmailAndPasswordCubit,
+          child: const SignUpViewPassword(),
+        ),
       );
     case MainView.routeName:
       return MaterialPageRoute(

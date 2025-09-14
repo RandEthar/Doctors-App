@@ -5,11 +5,11 @@ import 'package:doctors_app/feature/auth/data/models/auth_response.dart';
 import 'package:doctors_app/feature/auth/data/models/signup_request_body.dart';
 import 'package:doctors_app/feature/auth/domain/repos/auth_repo.dart';
 
-class SignupWithEmailAndPaswordUseCae
+class SignupWithEmailAndPaswordUseCase
     extends UseCase<AuthResponse, SignupRequestBody> {
   final AuthRepo authRepo;
 
-  SignupWithEmailAndPaswordUseCae({required this.authRepo});
+  SignupWithEmailAndPaswordUseCase({required this.authRepo});
 
   @override
   Future<Either<Failure, AuthResponse>> call(

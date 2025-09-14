@@ -5,7 +5,7 @@ sealed class SignupWithEmailAndPasswordState {}
 
 final class SignupWithEmailAndPasswordCubitInitial
     extends SignupWithEmailAndPasswordState {}
-final class SigninWithEmailAndPasswordLoading
+final class SignupWithEmailAndPasswordLoading
 
     extends SignupWithEmailAndPasswordState {}
 

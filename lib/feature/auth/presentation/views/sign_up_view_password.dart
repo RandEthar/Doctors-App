@@ -1,4 +1,5 @@
-import 'package:doctors_app/feature/auth/presentation/views/widgets/sign_up_view_body_password.dart';
+
+import 'package:doctors_app/feature/auth/presentation/views/widgets/signup_bloc_consumer.dart';
 import 'package:flutter/material.dart';
 
 class SignUpViewPassword extends StatelessWidget {
@@ -7,7 +8,10 @@ class SignUpViewPassword extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body:SafeArea(child: SignUpViewBodyPassword()) ,
+      body:SafeArea(child:SignupBlocConsumer()
+      
+      
+      ) ,
     );
   }
 }
