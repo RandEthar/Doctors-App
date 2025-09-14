@@ -39,7 +39,7 @@ class SignUpViewBodyPassword extends StatelessWidget {
           const SizedBox(
             height: 12,
           ),
-        const   CustomTextFormFieldPassword(text: "New password" ,),
+        // const   CustomTextFormFieldPassword(text: "New password" ,),
           const SizedBox(
             height: 16,
           ),
@@ -50,7 +50,7 @@ class SignUpViewBodyPassword extends StatelessWidget {
           const SizedBox(
             height: 12,
           ),
-         const   CustomTextFormFieldPassword(text: "Confirm password" ,),
+        //  const   CustomTextFormFieldPassword(text: "Confirm password" ,),
              const SizedBox(
             height: 32,
           ),

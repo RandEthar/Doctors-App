@@ -43,9 +43,9 @@ class SignUpViewBody extends StatelessWidget {
           const SizedBox(
             height: 12,
           ),
-          const TextFormFieldApp(
-            hintText: "Enter full name",
-          ),
+          // const TextFormFieldApp(
+          //   hintText: "Enter full name",
+          // ),
           const SizedBox(
             height: 16,
           ),
@@ -56,9 +56,9 @@ class SignUpViewBody extends StatelessWidget {
           const SizedBox(
             height: 12,
           ),
-          const TextFormFieldApp(
-            hintText: "Enter email address",
-          ),
+          // const TextFormFieldApp(
+          //   hintText: "Enter email address",
+          // ),
              const SizedBox(
             height: 32,
           ),

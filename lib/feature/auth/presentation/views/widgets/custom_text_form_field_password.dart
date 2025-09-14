@@ -5,9 +5,11 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class CustomTextFormFieldPassword extends StatefulWidget {
   const CustomTextFormFieldPassword({
-    super.key, required this.text,
+    super.key, required this.text, required this.controller, required this.validator,
   });
+  final TextEditingController controller;
 final String text;
+final String? Function(String?) validator;
   @override
   State<CustomTextFormFieldPassword> createState() =>
       _CustomTextFormFieldPasswordState();
@@ -15,10 +17,15 @@ final String text;
 
 class _CustomTextFormFieldPasswordState
     extends State<CustomTextFormFieldPassword> {
+
   bool obscureText = true;
   @override
   Widget build(BuildContext context) {
     return TextFormFieldApp(
+      controller: widget.controller,
+      validator: (value){
+        widget.validator(value);
+      },
       obscureText: obscureText,
       suffixIcon: GestureDetector(
           onTap: () {

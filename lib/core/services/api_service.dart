@@ -9,13 +9,11 @@ class ApiService {
     var respons = await dio.get("${ApiConstants.apiBaseUrl}$endPoint");
     return respons.data;
   }
-  Future<Map<String, dynamic>>post({required String endPoint,required Map<String, dynamic>data}) async {
-    var respons = await dio.post("${ApiConstants.apiBaseUrl}$endPoint",data: data);
+
+  Future<Map<String, dynamic>> post(
+      {required String endPoint, required Map<String, dynamic> data}) async {
+    var respons =
+        await dio.post("${ApiConstants.apiBaseUrl}$endPoint", data: data);
     return respons.data;
   }
-
-
-
-
-
 }
