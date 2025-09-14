@@ -23,9 +23,7 @@ class _CustomTextFormFieldPasswordState
   Widget build(BuildContext context) {
     return TextFormFieldApp(
       controller: widget.controller,
-      validator: (value){
-        widget.validator(value);
-      },
+      validator: widget.validator,
       obscureText: obscureText,
       suffixIcon: GestureDetector(
           onTap: () {

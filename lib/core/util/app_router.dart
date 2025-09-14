@@ -5,6 +5,7 @@ import 'package:doctors_app/feature/auth/presentation/views/sigin_view_email.dar
 import 'package:doctors_app/feature/auth/presentation/views/sigin_view_password.dart';
 import 'package:doctors_app/feature/auth/presentation/views/sign_up_view_detuils.dart';
 import 'package:doctors_app/feature/auth/presentation/views/sign_up_view_password.dart';
+import 'package:doctors_app/feature/main/presentation/view/main_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -19,10 +20,10 @@ Route<dynamic>? onGenerateRoute(RouteSettings settings) {
         ),
       );
     case SiginViewPassword.routeName:
+      final cubit = settings.arguments as SigninWithEmailAndPasswordCubit;
       return MaterialPageRoute(
-        builder: (context) => BlocProvider(
-          create: (context) => SigninWithEmailAndPasswordCubit(
-              getIt.get<SignInWithEmailAndPasswordUseCase>()),
+        builder: (context) => BlocProvider.value(
+          value: cubit,
           child: const SiginViewPassword(),
         ),
       );
@@ -33,6 +34,10 @@ Route<dynamic>? onGenerateRoute(RouteSettings settings) {
     case SignUpViewPassword.routeName:
       return MaterialPageRoute(
         builder: (context) => const SignUpViewPassword(),
+      );
+    case MainView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const MainView(),
       );
     default:
       return null;

@@ -15,12 +15,14 @@ class SigninWithEmailAndPasswordCubit
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
- GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  void signInWithEmailAndPassword(LoginRequestBody loginRequestBody) async {
+  GlobalKey<FormState> formKeyPassword = GlobalKey<FormState>();
+  GlobalKey<FormState> formKeyEmail = GlobalKey<FormState>();
+  void signInWithEmailAndPassword() async {
     emit(SigninWithEmailAndPasswordLoading());
 
-    final response =
-        await signInWithEmailAndPasswordUseCase(param: loginRequestBody);
+    final response = await signInWithEmailAndPasswordUseCase(
+        param: LoginRequestBody(
+            email: emailController.text, password: passwordController.text));
     response.fold((error) {
       emit(SigninWithEmailAndPasswordFailure(errMessage: error.message));
     }, (data) {

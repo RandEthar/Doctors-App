@@ -1,6 +1,8 @@
+import 'package:doctors_app/core/helpers/app_regex.dart';
 import 'package:doctors_app/core/util/app_text_style.dart';
 import 'package:doctors_app/core/widgets/button_app.dart';
 import 'package:doctors_app/core/widgets/password_validation.dart';
+import 'package:doctors_app/feature/auth/data/models/login_request_body.dart';
 import 'package:doctors_app/feature/auth/presentation/manger/sighin/signin_with_email_and_password_cubit.dart';
 
 import 'package:doctors_app/feature/auth/presentation/views/widgets/create_account_widget.dart';
@@ -25,19 +27,34 @@ class _SiginViewPasswordBodyState extends State<SiginViewPasswordBody> {
   bool hasMinLength = false;
   bool hasNumber = false;
   bool hasUpperCase = false;
-bool hasSpecialCharacter=false;
+  bool hasSpecialCharacter = false;
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     passwordController =
         context.read<SigninWithEmailAndPasswordCubit>().passwordController;
+    passwordController.addListener(() {
+      setState(() {
+        hasLowerCase = AppRegex.hasLowerCase(passwordController.text);
+        hasMinLength = AppRegex.hasMinLength(passwordController.text);
+        hasNumber = AppRegex.hasNumber(passwordController.text);
+        hasUpperCase = AppRegex.hasUpperCase(passwordController.text);
+        hasSpecialCharacter =
+            AppRegex.hasSpecialCharacter(passwordController.text);
+      });
+    });
   }
+  // @override
+  // void dispose() {
+  //   // TODO: implement dispose
+  //   super.dispose();
+  //   passwordController.dispose();
+  // }
 
   @override
   Widget build(BuildContext context) {
     return Form(
-      key: context.read<SigninWithEmailAndPasswordCubit>().formKey,
+      key: context.read<SigninWithEmailAndPasswordCubit>().formKeyPassword,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
         child: SingleChildScrollView(
@@ -78,7 +95,7 @@ bool hasSpecialCharacter=false;
                 height: 24,
               ),
               PasswordValidation(
-                hasSpecialCharacter:hasSpecialCharacter ,
+                hasSpecialCharacter: hasSpecialCharacter,
                 hasLowerCase: hasLowerCase,
                 hasMinLength: hasMinLength,
                 hasNumber: hasNumber,
@@ -100,7 +117,9 @@ bool hasSpecialCharacter=false;
               const SizedBox(
                 height: 32,
               ),
-              const ButtonApp(text: "Sign In"),
+             ButtonApp(text: "Sign In",onTap: () {
+                validateThenLogin(context) ;
+              },),
               const SizedBox(
                 height: 32,
               ),
@@ -112,5 +131,16 @@ bool hasSpecialCharacter=false;
         ),
       ),
     );
+  }
+}
+
+void validateThenLogin(BuildContext context) {
+  if (context
+      .read<SigninWithEmailAndPasswordCubit>()
+      .formKeyPassword
+      .currentState!
+      .validate()) {
+    context.read<SigninWithEmailAndPasswordCubit>().signInWithEmailAndPassword(
+      );
   }
 }

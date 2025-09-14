@@ -2,14 +2,11 @@
 
 import 'package:doctors_app/core/util/app_text_style.dart';
 import 'package:doctors_app/core/widgets/button_app.dart';
-import 'package:doctors_app/core/widgets/text_form_field_app.dart';
-import 'package:doctors_app/feature/auth/presentation/views/sigin_view_password.dart';
 import 'package:doctors_app/feature/auth/presentation/views/sign_up_view_password.dart';
 
 import 'package:doctors_app/feature/auth/presentation/views/widgets/custom_or_widget.dart';
 import 'package:doctors_app/feature/auth/presentation/views/widgets/have_account_widget.dart';
 import 'package:doctors_app/feature/auth/presentation/views/widgets/pop_widget.dart';
-import 'package:doctors_app/feature/auth/presentation/views/widgets/sigin_view_password_body.dart';
 import 'package:doctors_app/feature/auth/presentation/views/widgets/social_login_button_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -47,6 +44,32 @@ class SignUpViewBody extends StatelessWidget {
           //   hintText: "Enter full name",
           // ),
           const SizedBox(
+            height: 16,
+          ),
+            Text(
+            'Email Address',
+            style: AppTextStyle.medium16,
+          ),
+          const SizedBox(
+            height: 12,
+          ),
+          // const TextFormFieldApp(
+          //   hintText: "Enter email address",
+          // ),
+           const SizedBox(
+            height: 16,
+          ),
+            Text(
+            'Email Address',
+            style: AppTextStyle.medium16,
+          ),
+          const SizedBox(
+            height: 12,
+          ),
+          // const TextFormFieldApp(
+          //   hintText: "Enter email address",
+          // ),
+            const SizedBox(
             height: 16,
           ),
             Text(

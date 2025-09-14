@@ -3,7 +3,7 @@ import 'package:doctors_app/core/util/app_text_style.dart';
 import 'package:flutter/material.dart';
 
 class TextFormFieldApp extends StatelessWidget {
-  const TextFormFieldApp({super.key, required this.hintText, this.suffixIcon, this.obscureText=true, required this.controller, required this.validator});
+  const TextFormFieldApp({super.key, required this.hintText, this.suffixIcon, this.obscureText=false, required this.controller, required this.validator});
   final String hintText;
   final Widget? suffixIcon;
   final bool obscureText;
@@ -13,9 +13,7 @@ class TextFormFieldApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       controller:controller ,
-      validator:(value){
-        validator(value);
-      } ,
+      validator:validator,
       obscureText:obscureText ,
       decoration: InputDecoration(
           filled: true,
