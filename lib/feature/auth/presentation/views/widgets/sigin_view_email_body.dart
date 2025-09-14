@@ -31,52 +31,54 @@ class _SiginViewEmailBodyState extends State<SiginViewEmailBody> {
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
       child: Form(
         key:context.read<SigninWithEmailAndPasswordCubit>().formKey ,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-          PopWidget(),
-            const SizedBox(
-              height: 8,
-            ),
-            Center(
-                child: Text(
-              textAlign: TextAlign.center,
-              "Sign In",
-              style: AppTextStyle.bold24,
-            )),
-            const SizedBox(
-              height: 80,
-            ),
-            Text(
-              'Email Address',
-              style: AppTextStyle.medium16,
-            ),
-            const SizedBox(
-              height: 12,
-            ),
-         TextFormFieldApp(
-  controller: emailController,
-  validator: (value) {
-    if (value == null || value.isEmpty) {
-      return "Email is required"; 
-    }
-    return null; 
-  },
-  hintText: "Enter email address",
-),
-            const SizedBox(
-              height: 32,
-            ),
-             ButtonApp(text: "Continue",onTap: () {
-              Navigator.pushNamed(context, SiginViewPassword.routeName);
-            },),
-            const SizedBox(
-              height: 32,
-            ),
-            const CreateAccountWidget(),
-           const CustomOrWidget(),
-          const SocialLoginButtonWidget()
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+            PopWidget(),
+              const SizedBox(
+                height: 8,
+              ),
+              Center(
+                  child: Text(
+                textAlign: TextAlign.center,
+                "Sign In",
+                style: AppTextStyle.bold24,
+              )),
+              const SizedBox(
+                height: 80,
+              ),
+              Text(
+                'Email Address',
+                style: AppTextStyle.medium16,
+              ),
+              const SizedBox(
+                height: 12,
+              ),
+           TextFormFieldApp(
+            controller: emailController,
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return "Email is required"; 
+              }
+              return null; 
+            },
+            hintText: "Enter email address",
+          ),
+              const SizedBox(
+                height: 32,
+              ),
+               ButtonApp(text: "Continue",onTap: () {
+                Navigator.pushNamed(context, SiginViewPassword.routeName);
+              },),
+              const SizedBox(
+                height: 32,
+              ),
+              const CreateAccountWidget(),
+             const CustomOrWidget(),
+            const SocialLoginButtonWidget()
+            ],
+          ),
         ),
       ),
     );

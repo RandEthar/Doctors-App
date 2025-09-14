@@ -1,5 +1,6 @@
 import 'package:doctors_app/core/util/app_text_style.dart';
 import 'package:doctors_app/core/widgets/button_app.dart';
+import 'package:doctors_app/core/widgets/password_validation.dart';
 import 'package:doctors_app/feature/auth/presentation/manger/sighin/signin_with_email_and_password_cubit.dart';
 
 import 'package:doctors_app/feature/auth/presentation/views/widgets/create_account_widget.dart';
@@ -20,6 +21,11 @@ class SiginViewPasswordBody extends StatefulWidget {
 
 class _SiginViewPasswordBodyState extends State<SiginViewPasswordBody> {
   late TextEditingController passwordController;
+  bool hasLowerCase = false;
+  bool hasMinLength = false;
+  bool hasNumber = false;
+  bool hasUpperCase = false;
+bool hasSpecialCharacter=false;
   @override
   void initState() {
     // TODO: implement initState
@@ -34,63 +40,75 @@ class _SiginViewPasswordBodyState extends State<SiginViewPasswordBody> {
       key: context.read<SigninWithEmailAndPasswordCubit>().formKey,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const PopWidget(),
-            const SizedBox(
-              height: 8,
-            ),
-            Center(
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const PopWidget(),
+              const SizedBox(
+                height: 8,
+              ),
+              Center(
+                  child: Text(
+                textAlign: TextAlign.center,
+                "Sign In",
+                style: AppTextStyle.bold24,
+              )),
+              const SizedBox(
+                height: 80,
+              ),
+              Text(
+                'Password',
+                style: AppTextStyle.medium16,
+              ),
+              const SizedBox(
+                height: 12,
+              ),
+              CustomTextFormFieldPassword(
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return "Password is required";
+                  }
+                  return null;
+                },
+                controller: passwordController,
+                text: "Enter Password",
+              ),
+              const SizedBox(
+                height: 24,
+              ),
+              PasswordValidation(
+                hasSpecialCharacter:hasSpecialCharacter ,
+                hasLowerCase: hasLowerCase,
+                hasMinLength: hasMinLength,
+                hasNumber: hasNumber,
+                hasUpperCase: hasUpperCase,
+              ),
+              const SizedBox(
+                height: 16,
+              ),
+              Align(
+                alignment: Alignment.centerRight,
                 child: Text(
-              textAlign: TextAlign.center,
-              "Sign In",
-              style: AppTextStyle.bold24,
-            )),
-            const SizedBox(
-              height: 80,
-            ),
-            Text(
-              'Password',
-              style: AppTextStyle.medium16,
-            ),
-            const SizedBox(
-              height: 12,
-            ),
-            CustomTextFormFieldPassword(
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return "Password is required";
-                }
-                return null;
-              },
-              controller: passwordController,
-              text: "Enter Password",
-            ),
-            const SizedBox(
-              height: 16,
-            ),
-            Align(
-              alignment: Alignment.centerRight,
-              child: Text(
-                textAlign: TextAlign.end,
-                'Forgot password?',
-                style: AppTextStyle.medium16.copyWith(
-                  color: const Color(0xFF32384B),
+                  textAlign: TextAlign.end,
+                  'Forgot password?',
+                  style: AppTextStyle.medium16.copyWith(
+                    color: const Color(0xFF32384B),
+                  ),
                 ),
               ),
-            ),
-            const SizedBox(
-              height: 32,
-            ),
-            const ButtonApp(text: "Sign In"),
-            const SizedBox(
-              height: 32,
-            ),
-            const CreateAccountWidget(),
-            const CustomOrWidget(),
-            const SocialLoginButtonWidget()
-          ],
+              const SizedBox(
+                height: 32,
+              ),
+              const ButtonApp(text: "Sign In"),
+              const SizedBox(
+                height: 32,
+              ),
+              const CreateAccountWidget(),
+              const CustomOrWidget(),
+              const SocialLoginButtonWidget()
+            ],
+          ),
         ),
       ),
     );
