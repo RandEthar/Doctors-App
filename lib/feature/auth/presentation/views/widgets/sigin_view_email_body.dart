@@ -2,7 +2,7 @@ import 'package:doctors_app/core/helpers/app_regex.dart';
 import 'package:doctors_app/core/util/app_text_style.dart';
 import 'package:doctors_app/core/widgets/button_app.dart';
 import 'package:doctors_app/core/widgets/text_form_field_app.dart';
-import 'package:doctors_app/feature/auth/presentation/manger/sighin/signin_with_email_and_password_cubit.dart';
+import 'package:doctors_app/feature/auth/presentation/manger/signIn/signin_with_email_and_password_cubit.dart';
 import 'package:doctors_app/feature/auth/presentation/views/sigin_view_password.dart';
 
 import 'package:doctors_app/feature/auth/presentation/views/widgets/create_account_widget.dart';

@@ -1,6 +1,6 @@
 import 'package:doctors_app/core/di/dependency_injection.dart';
 import 'package:doctors_app/feature/auth/domain/usecase/signin_with_email_and_pasword_use_cae.dart';
-import 'package:doctors_app/feature/auth/presentation/manger/sighin/signin_with_email_and_password_cubit.dart';
+import 'package:doctors_app/feature/auth/presentation/manger/signIn/signin_with_email_and_password_cubit.dart';
 import 'package:doctors_app/feature/auth/presentation/views/sigin_view_email.dart';
 import 'package:doctors_app/feature/auth/presentation/views/sigin_view_password.dart';
 import 'package:doctors_app/feature/auth/presentation/views/sign_up_view_detuils.dart';

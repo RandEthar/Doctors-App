@@ -3,7 +3,7 @@ import 'package:doctors_app/core/util/app_text_style.dart';
 import 'package:doctors_app/core/widgets/button_app.dart';
 import 'package:doctors_app/core/widgets/password_validation.dart';
 import 'package:doctors_app/feature/auth/data/models/login_request_body.dart';
-import 'package:doctors_app/feature/auth/presentation/manger/sighin/signin_with_email_and_password_cubit.dart';
+import 'package:doctors_app/feature/auth/presentation/manger/signIn/signin_with_email_and_password_cubit.dart';
 
 import 'package:doctors_app/feature/auth/presentation/views/widgets/create_account_widget.dart';
 import 'package:doctors_app/feature/auth/presentation/views/widgets/custom_or_widget.dart';

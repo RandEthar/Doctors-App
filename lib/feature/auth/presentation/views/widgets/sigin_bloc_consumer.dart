@@ -1,5 +1,5 @@
 import 'package:doctors_app/core/util/app_colors.dart';
-import 'package:doctors_app/feature/auth/presentation/manger/sighin/signin_with_email_and_password_cubit.dart';
+import 'package:doctors_app/feature/auth/presentation/manger/signIn/signin_with_email_and_password_cubit.dart';
 import 'package:doctors_app/feature/auth/presentation/views/widgets/sigin_view_password_body.dart';
 import 'package:doctors_app/feature/main/presentation/view/main_view.dart';
 import 'package:flutter/material.dart';
