@@ -28,6 +28,12 @@ class AppTextStyle {
 
     color: Colors.black,
   );
+    static TextStyle bold18 = GoogleFonts.openSans(
+    fontSize:18,
+    fontWeight: FontWeight.bold,
+
+    color: Colors.black,
+  );
   static TextStyle medium16 = GoogleFonts.openSans(
     fontSize: 16,
     fontWeight: FontWeight.w500,
@@ -39,8 +45,19 @@ class AppTextStyle {
 
     color: Colors.black,
   );
+  static TextStyle semiBold14 = GoogleFonts.openSans(
+    fontSize:14,
+    fontWeight: FontWeight.w600,
+
+    color: Colors.black,
+  );
   static TextStyle medium12 = GoogleFonts.openSans(
     fontSize: 12,
+    fontWeight: FontWeight.w500,
+    color: Colors.black,
+  );
+    static TextStyle medium14 = GoogleFonts.openSans(
+    fontSize: 14,
     fontWeight: FontWeight.w500,
     color: Colors.black,
   );

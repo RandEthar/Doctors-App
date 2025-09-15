@@ -1,24 +1,30 @@
 import 'package:doctors_app/core/util/app_colors.dart';
-import 'package:doctors_app/core/util/app_images.dart';
 import 'package:doctors_app/core/util/app_text_style.dart';
 import 'package:doctors_app/feature/main/presentation/view/widgets/custom_home_header_widget.dart';
+import 'package:doctors_app/feature/main/presentation/view/widgets/upcoming_appointments_list_view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
+    return SingleChildScrollView(
       child: Padding(
-        padding:EdgeInsets.only(top: 8,left: 24),
+        padding: const EdgeInsets.only(top: 8, left: 24),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CustomHomeHeaderWidegt(),
-              SizedBox(height:40,),
-            
-        
+            const CustomHomeHeaderWidegt(),
+            const SizedBox(
+              height: 40,
+            ),
+            Text(
+              "Upcoming Appointments",
+              style: AppTextStyle.bold18.copyWith(color: AppColor.darkerBlue),
+            ),
+          const  SizedBox(height: 24,),
+         const  UpcomingAppointmentsListView()
           ],
         ),
       ),
