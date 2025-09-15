@@ -1,4 +1,5 @@
 import 'package:doctors_app/feature/main/presentation/view/widgets/custom_nav_bar.dart';
+import 'package:doctors_app/feature/main/presentation/view/widgets/home_view_body.dart';
 import 'package:flutter/material.dart';
 
 class MainView extends StatelessWidget {
@@ -8,7 +9,7 @@ class MainView extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       bottomNavigationBar: CustomNavBar(),
-        body: Column(),
+        body: SafeArea(child: HomeViewBody()),
     );
   }
 }

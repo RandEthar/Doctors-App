@@ -7,4 +7,6 @@ class AppColor {
   static const Color primary = Color(0xFF2E6FF3); // الأزرق الأساسي
   static const Color darkGrey = Color(0xFF7D8A95); // رمادي غامق
   static const Color softBlue = Color(0xFFC0D4FB); // أزرق فاتح ناعم
+  static const Color darkBlue = Color(0xFF32384B); // أزرق غامق
 }
+

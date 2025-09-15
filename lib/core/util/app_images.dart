@@ -22,6 +22,10 @@ class Assets {
   /// assets/images/_Facebook.svg
   static const String imagesFacebook = "assets/images/_Facebook.svg";
 
+  /// Assets for imagesFavorite
+  /// assets/images/Favorite.svg
+  static const String imagesFavorite = "assets/images/Favorite.svg";
+
   /// Assets for imagesGoogle
   /// assets/images/_Google.svg
   static const String imagesGoogle = "assets/images/_Google.svg";
@@ -38,9 +42,17 @@ class Assets {
   /// assets/images/nonVisable.svg
   static const String imagesNonVisable = "assets/images/nonVisable.svg";
 
+  /// Assets for imagesPic
+  /// assets/images/Pic.png
+  static const String imagesPic = "assets/images/Pic.png";
+
   /// Assets for imagesProfile
   /// assets/images/Profile.svg
   static const String imagesProfile = "assets/images/Profile.svg";
+
+  /// Assets for imagesSearch
+  /// assets/images/Search.svg
+  static const String imagesSearch = "assets/images/Search.svg";
 
   /// Assets for imagesSplash
   /// assets/images/splash.png
