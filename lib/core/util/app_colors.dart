@@ -6,4 +6,5 @@ class AppColor {
   static const Color backgroundGrey = Color(0xFFF9FAFB); // خلفية فاتحة
   static const Color primary = Color(0xFF2E6FF3); // الأزرق الأساسي
   static const Color darkGrey = Color(0xFF7D8A95); // رمادي غامق
+  static const Color softBlue = Color(0xFFC0D4FB); // أزرق فاتح ناعم
 }

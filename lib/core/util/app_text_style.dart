@@ -33,5 +33,15 @@ class AppTextStyle {
     fontWeight: FontWeight.w500,
     color: Colors.black,
   );
-  
+    static TextStyle semiBold12 = GoogleFonts.openSans(
+    fontSize:12,
+    fontWeight: FontWeight.w600,
+
+    color: Colors.black,
+  );
+  static TextStyle medium12 = GoogleFonts.openSans(
+    fontSize: 12,
+    fontWeight: FontWeight.w500,
+    color: Colors.black,
+  );
 }

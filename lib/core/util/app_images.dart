@@ -10,6 +10,14 @@ class Assets {
   /// assets/images/Arrow.svg
   static const String imagesArrow = "assets/images/Arrow.svg";
 
+  /// Assets for imagesBookings
+  /// assets/images/Bookings.svg
+  static const String imagesBookings = "assets/images/Bookings.svg";
+
+  /// Assets for imagesChat
+  /// assets/images/Chat.svg
+  static const String imagesChat = "assets/images/Chat.svg";
+
   /// Assets for imagesFacebook
   /// assets/images/_Facebook.svg
   static const String imagesFacebook = "assets/images/_Facebook.svg";
@@ -18,6 +26,10 @@ class Assets {
   /// assets/images/_Google.svg
   static const String imagesGoogle = "assets/images/_Google.svg";
 
+  /// Assets for imagesHome
+  /// assets/images/Home.svg
+  static const String imagesHome = "assets/images/Home.svg";
+
   /// Assets for imagesLogo
   /// assets/images/Logo.png
   static const String imagesLogo = "assets/images/Logo.png";
@@ -25,6 +37,10 @@ class Assets {
   /// Assets for imagesNonVisable
   /// assets/images/nonVisable.svg
   static const String imagesNonVisable = "assets/images/nonVisable.svg";
+
+  /// Assets for imagesProfile
+  /// assets/images/Profile.svg
+  static const String imagesProfile = "assets/images/Profile.svg";
 
   /// Assets for imagesSplash
   /// assets/images/splash.png

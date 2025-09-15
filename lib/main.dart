@@ -1,6 +1,7 @@
 import 'package:doctors_app/core/di/dependency_injection.dart';
 import 'package:doctors_app/core/util/app_router.dart';
 import 'package:doctors_app/feature/auth/presentation/views/sigin_view_email.dart';
+import 'package:doctors_app/feature/main/presentation/view/main_view.dart';
 
 import 'package:flutter/material.dart';
 
@@ -19,7 +20,7 @@ class DoctorsApp extends StatelessWidget {
       title: 'Doctors App',
       theme: ThemeData.light().copyWith(scaffoldBackgroundColor: Colors.white),
       onGenerateRoute: onGenerateRoute,
-      initialRoute: SiginViewEmail.routeName,
+      initialRoute: MainView.routeName,
     );
   }
 }
