@@ -9,7 +9,7 @@ class MainView extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       bottomNavigationBar: CustomNavBar(),
-        body: SafeArea(child: HomeViewBody()),
+      body: SafeArea(child: HomeViewBody()),
     );
   }
 }

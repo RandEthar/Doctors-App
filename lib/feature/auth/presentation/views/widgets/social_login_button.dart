@@ -10,7 +10,7 @@ class SocialLoginButton extends StatelessWidget {
     return CircleAvatar(
       radius: 28,
       backgroundColor: AppColor.lightGrey,
-        child: SvgPicture.asset(icon),
+      child: SvgPicture.asset(icon),
     );
   }
 }

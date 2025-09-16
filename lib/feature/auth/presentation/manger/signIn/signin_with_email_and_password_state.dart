@@ -11,10 +11,10 @@ final class SigninWithEmailAndPasswordLoading
 
 final class SigninWithEmailAndPasswordSuccess
     extends SigninWithEmailAndPasswordState {
-      final AuthResponse loginResponse;
+  final AuthResponse loginResponse;
 
   SigninWithEmailAndPasswordSuccess({required this.loginResponse});
-    }
+}
 
 final class SigninWithEmailAndPasswordFailure
     extends SigninWithEmailAndPasswordState {

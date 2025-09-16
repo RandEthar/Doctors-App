@@ -7,7 +7,6 @@ import 'package:doctors_app/feature/main/presentation/view/widgets/rating_and_da
 import 'package:doctors_app/feature/main/presentation/view/widgets/toggle_favorite_widget.dart';
 import 'package:flutter/material.dart';
 
-
 class CustomDoctorsItemWidget extends StatelessWidget {
   const CustomDoctorsItemWidget({super.key});
 
@@ -55,34 +54,27 @@ class CustomDoctorsItemWidget extends StatelessWidget {
                             height: 8,
                           ),
                           RatingandDateWidget(),
-                     
                         ],
                       ),
                     ],
                   ),
                 ],
               ),
-               const Spacer(),
-            const  ToggelFavorite(),
+              const Spacer(),
+              const ToggelFavorite(),
             ],
           ),
-            const   SizedBox(
-                        height: 16,
-                      ),
-                      const ButtonApp(
-                        hight: 40,
-                        textColor: AppColor.primary,
-                        backgroundColor: AppColor.blueGrayLight,
-                        text: "Book Appointment",
-                      )
+          const SizedBox(
+            height: 16,
+          ),
+          const ButtonApp(
+            hight: 40,
+            textColor: AppColor.primary,
+            backgroundColor: AppColor.blueGrayLight,
+            text: "Book Appointment",
+          )
         ],
       ),
     );
   }
 }
-
-
-
-
-
-

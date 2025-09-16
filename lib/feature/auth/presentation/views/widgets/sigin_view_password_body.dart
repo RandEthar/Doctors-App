@@ -117,9 +117,12 @@ class _SiginViewPasswordBodyState extends State<SiginViewPasswordBody> {
               const SizedBox(
                 height: 32,
               ),
-             ButtonApp(text: "Sign In",onTap: () {
-                validateThenLogin(context) ;
-              },),
+              ButtonApp(
+                text: "Sign In",
+                onTap: () {
+                  validateThenLogin(context);
+                },
+              ),
               const SizedBox(
                 height: 32,
               ),
@@ -140,7 +143,8 @@ void validateThenLogin(BuildContext context) {
       .formKeyPassword
       .currentState!
       .validate()) {
-    context.read<SigninWithEmailAndPasswordCubit>().signInWithEmailAndPassword(
-      );
+    context
+        .read<SigninWithEmailAndPasswordCubit>()
+        .signInWithEmailAndPassword();
   }
 }

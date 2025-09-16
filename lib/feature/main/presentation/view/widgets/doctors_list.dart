@@ -7,15 +7,14 @@ class DoctorsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      physics:const NeverScrollableScrollPhysics(),
-      shrinkWrap: true,
-  
-      itemCount: 10,
-      itemBuilder: (context, index) {
-      return const Padding(
-        padding:  EdgeInsets.only(right: 16,bottom: 16),
-        child: CustomDoctorsItemWidget (),
-      );
-    });
+        physics: const NeverScrollableScrollPhysics(),
+        shrinkWrap: true,
+        itemCount: 10,
+        itemBuilder: (context, index) {
+          return const Padding(
+            padding: EdgeInsets.only(right: 16, bottom: 16),
+            child: CustomDoctorsItemWidget(),
+          );
+        });
   }
 }

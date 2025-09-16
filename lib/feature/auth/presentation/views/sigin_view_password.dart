@@ -7,9 +7,7 @@ class SiginViewPassword extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: SafeArea(child:LoginBlocConsumer()
-      
-      ),
+      body: SafeArea(child: LoginBlocConsumer()),
     );
   }
 }

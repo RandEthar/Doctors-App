@@ -7,16 +7,16 @@ class PopWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return   GestureDetector(
+    return GestureDetector(
       onTap: () {
         Navigator.pop(context);
       },
       child: SvgPicture.asset(
-              Assets.imagesArrow,
-              height: 24,
-              width: 24,
-              fit: BoxFit.fill,
-            ),
+        Assets.imagesArrow,
+        height: 24,
+        width: 24,
+        fit: BoxFit.fill,
+      ),
     );
   }
 }

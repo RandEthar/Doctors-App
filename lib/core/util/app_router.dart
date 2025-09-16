@@ -43,7 +43,7 @@ Route<dynamic>? onGenerateRoute(RouteSettings settings) {
     case SignUpViewPassword.routeName:
       return MaterialPageRoute(
         builder: (context) => BlocProvider.value(
-          value : settings.arguments as SignupWithEmailAndPasswordCubit,
+          value: settings.arguments as SignupWithEmailAndPasswordCubit,
           child: const SignUpViewPassword(),
         ),
       );

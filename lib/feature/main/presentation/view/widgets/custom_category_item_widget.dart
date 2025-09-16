@@ -7,7 +7,7 @@ import 'package:flutter_svg/svg.dart';
 
 class CustomCategoryItemWidget extends StatelessWidget {
   const CustomCategoryItemWidget({super.key, required this.category});
- final CategoriesEntity category;
+  final CategoriesEntity category;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -33,8 +33,9 @@ class CustomCategoryItemWidget extends StatelessWidget {
               //   height: 4,
               // ),
               Text(
-               category.name,
-                style: AppTextStyle.regular14.copyWith(color: AppColor.darkBlue),
+                category.name,
+                style:
+                    AppTextStyle.regular14.copyWith(color: AppColor.darkBlue),
               ),
             ],
           ),

@@ -13,7 +13,7 @@ class PasswordValidation extends StatelessWidget {
     required this.hasUpperCase,
     required this.hasNumber,
     required this.hasMinLength,
-    required this.hasSpecialCharacter, 
+    required this.hasSpecialCharacter,
   });
 
   Widget _buildValidationRow(bool condition, String text) {

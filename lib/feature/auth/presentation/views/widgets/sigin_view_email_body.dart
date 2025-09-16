@@ -25,7 +25,7 @@ class SiginViewEmailBody extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-          const  PopWidget(),
+              const PopWidget(),
               const SizedBox(
                 height: 8,
               ),
@@ -72,8 +72,9 @@ class SiginViewEmailBody extends StatelessWidget {
                   if (form != null && form.validate()) {
                     Navigator.pushNamed(
                       context,
-                      SiginViewPassword.routeName
-                    ,  arguments: context.read<SigninWithEmailAndPasswordCubit>(),
+                      SiginViewPassword.routeName,
+                      arguments:
+                          context.read<SigninWithEmailAndPasswordCubit>(),
                     );
                   }
                 },

@@ -7,7 +7,6 @@ class LoginRequestBody {
     required this.password,
   });
 
-
   Map<String, dynamic> toJson() {
     return {
       "email": email,
@@ -15,7 +14,6 @@ class LoginRequestBody {
     };
   }
 
- 
   factory LoginRequestBody.fromJson(Map<String, dynamic> json) {
     return LoginRequestBody(
       email: json["email"] as String,

@@ -17,18 +17,18 @@ class SignupBlocConsumer extends StatelessWidget {
           current is SignupWithEmailAndPasswordSuccess ||
           current is SignupWithEmailAndPasswordFailure,
       listener: (context, state) {
-     if (state is SignupWithEmailAndPasswordSuccess) {
-  ScaffoldMessenger.of(context).showSnackBar(
-    const SnackBar(
-      content: Text("Account created successfully. Please login."),
-      duration: Duration(seconds: 2),
-    ),
-  );
+        if (state is SignupWithEmailAndPasswordSuccess) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text("Account created successfully. Please login."),
+              duration: Duration(seconds: 2),
+            ),
+          );
 
-  Future.delayed(const Duration(seconds: 2), () {
-    Navigator.pushNamed(context, SiginViewEmail.routeName);
-  });
-} else if (state is SignupWithEmailAndPasswordFailure) {
+          Future.delayed(const Duration(seconds: 2), () {
+            Navigator.pushNamed(context, SiginViewEmail.routeName);
+          });
+        } else if (state is SignupWithEmailAndPasswordFailure) {
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
               content: Text("Please check your email or password"),

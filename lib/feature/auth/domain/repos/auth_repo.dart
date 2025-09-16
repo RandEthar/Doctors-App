@@ -8,7 +8,7 @@ abstract class AuthRepo {
   Future<Either<Failure, AuthResponse>> signInWithEmailAndPassword(
     LoginRequestBody loginRequestBody,
   );
-    Future<Either<Failure, AuthResponse>> signupWithEmailAndPassword(
-   SignupRequestBody signupRequestBody,
+  Future<Either<Failure, AuthResponse>> signupWithEmailAndPassword(
+    SignupRequestBody signupRequestBody,
   );
 }

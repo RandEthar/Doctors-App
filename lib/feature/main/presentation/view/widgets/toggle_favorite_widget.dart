@@ -13,19 +13,19 @@ class ToggelFavorite extends StatefulWidget {
 }
 
 class _ToggelFavoriteState extends State<ToggelFavorite> {
-  bool isFav=false;
+  bool isFav = false;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 12),
       child: GestureDetector(
-        onTap: (){
-        setState(() {
-            isFav=!isFav;
-        });
+        onTap: () {
+          setState(() {
+            isFav = !isFav;
+          });
         },
         child: SvgPicture.asset(
-        isFav?Assets.imagesIsfav  :Assets.imagesFavorite,
+          isFav ? Assets.imagesIsfav : Assets.imagesFavorite,
           color: AppColor.red,
           height: 20,
           width: 20,

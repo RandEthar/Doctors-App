@@ -47,13 +47,13 @@ class HomeViewBody extends StatelessWidget {
             const SizedBox(
               height: 40,
             ),
-                   const SectionHeader(
+            const SectionHeader(
               text: "Find Doctors",
             ),
-             const SizedBox(
+            const SizedBox(
               height: 24,
             ),
-        const   DoctorsList()
+            const DoctorsList()
           ],
         ),
       ),

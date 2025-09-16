@@ -5,18 +5,16 @@ sealed class SignupWithEmailAndPasswordState {}
 
 final class SignupWithEmailAndPasswordCubitInitial
     extends SignupWithEmailAndPasswordState {}
-final class SignupWithEmailAndPasswordLoading
 
+final class SignupWithEmailAndPasswordLoading
     extends SignupWithEmailAndPasswordState {}
 
 final class SignupWithEmailAndPasswordSuccess
     extends SignupWithEmailAndPasswordState {
-      final AuthResponse signInResponse;
+  final AuthResponse signInResponse;
 
   SignupWithEmailAndPasswordSuccess({required this.signInResponse});
-
-
-    }
+}
 
 final class SignupWithEmailAndPasswordFailure
     extends SignupWithEmailAndPasswordState {

@@ -17,45 +17,47 @@ class _CustomNavBarState extends State<CustomNavBar> {
   Widget build(BuildContext context) {
     return AnimatedContainer(
       curve: Curves.bounceOut,
-      duration:const Duration(milliseconds: 300),
+      duration: const Duration(milliseconds: 300),
       height: 80,
       width: double.infinity,
       color: AppColor.primary,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 32,vertical: 16),
+        padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: navBarList.asMap().entries.map((entry) {
-          int index = entry.key;
-          NavBarEntity value = entry.value;
-          return GestureDetector(
-            onTap: () {
-              setState(() {
-                selectedIndex = index;
-              });
-            },
-            child: Column(
-              children: [
-                SvgPicture.asset(
-                  fit: BoxFit.fill,
-                  value.image,
-                  height: 24,
-                  width: 24,
-                    color:   index==selectedIndex?Colors.white:AppColor.softBlue
+              int index = entry.key;
+              NavBarEntity value = entry.value;
+              return GestureDetector(
+                onTap: () {
+                  setState(() {
+                    selectedIndex = index;
+                  });
+                },
+                child: Column(
+                  children: [
+                    SvgPicture.asset(
+                        fit: BoxFit.fill,
+                        value.image,
+                        height: 24,
+                        width: 24,
+                        color: index == selectedIndex
+                            ? Colors.white
+                            : AppColor.softBlue),
+                    const SizedBox(
+                      height: 4,
+                    ),
+                    Text(
+                      value.name,
+                      style: AppTextStyle.regular14.copyWith(
+                          color: index == selectedIndex
+                              ? Colors.white
+                              : AppColor.softBlue),
+                    )
+                  ],
                 ),
-                const SizedBox(
-                  height: 4,
-                ),
-                Text(
-                  value.name,
-                  style: AppTextStyle.regular14.copyWith(
-                  color:   index==selectedIndex?Colors.white:AppColor.softBlue
-                  ),
-                )
-              ],
-            ),
-          );
-        }).toList()),
+              );
+            }).toList()),
       ),
     );
   }

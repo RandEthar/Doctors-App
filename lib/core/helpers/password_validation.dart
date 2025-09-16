@@ -1,7 +1,7 @@
 import 'package:doctors_app/core/helpers/app_regex.dart';
 
-String ? passwordValidation(String? value ){
-   if (value == null || value.isEmpty) {
+String? passwordValidation(String? value) {
+  if (value == null || value.isEmpty) {
     return "Password is required";
   } else if (value.length < 8) {
     return "Password must be at least 8 characters";

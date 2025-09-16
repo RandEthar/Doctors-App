@@ -91,41 +91,45 @@ class UpcomingAppointmentsItemWidget extends StatelessWidget {
             const Spacer(),
             Row(
               children: [
-                Row(children: [
-                           SvgPicture.asset(
-                      Assets.imagesCalender ,
+                Row(
+                  children: [
+                    SvgPicture.asset(
+                      Assets.imagesCalender,
                       height: 18,
-                      width:18,
+                      width: 18,
                       fit: BoxFit.fill,
                     ),
-                const    SizedBox(width: 8,),
-                       Text(
-                             "5 Oct",
-                              style: AppTextStyle.semiBold14
-                                  .copyWith(color: Colors.white),
-                            ),
-                
-                
-                
-                ],),  const Spacer(),
-                   Row(children: [
-                           SvgPicture.asset(
-                      Assets.imagesTime ,
+                    const SizedBox(
+                      width: 8,
+                    ),
+                    Text(
+                      "5 Oct",
+                      style:
+                          AppTextStyle.semiBold14.copyWith(color: Colors.white),
+                    ),
+                  ],
+                ),
+                const Spacer(),
+                Row(
+                  children: [
+                    SvgPicture.asset(
+                      Assets.imagesTime,
                       height: 18,
-                      width:18,
+                      width: 18,
                       fit: BoxFit.fill,
                     ),
-                const    SizedBox(width: 8,),
-                       Text(
-                                '10:30pm',
-                              style: AppTextStyle.semiBold14
-                                  .copyWith(color: Colors.white),
-                            ),
-
-                ],),
+                    const SizedBox(
+                      width: 8,
+                    ),
+                    Text(
+                      '10:30pm',
+                      style:
+                          AppTextStyle.semiBold14.copyWith(color: Colors.white),
+                    ),
+                  ],
+                ),
               ],
             )
-
           ],
         ),
       ),

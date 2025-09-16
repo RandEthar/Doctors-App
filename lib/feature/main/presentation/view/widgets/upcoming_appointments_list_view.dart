@@ -9,14 +9,14 @@ class UpcomingAppointmentsListView extends StatelessWidget {
     return SizedBox(
       height: 132,
       child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: 10,
-        itemBuilder: (context, index) {
-        return const Padding(
-          padding:  EdgeInsets.only(right: 16),
-          child: UpcomingAppointmentsItemWidget(),
-        );
-      }),
+          scrollDirection: Axis.horizontal,
+          itemCount: 10,
+          itemBuilder: (context, index) {
+            return const Padding(
+              padding: EdgeInsets.only(right: 16),
+              child: UpcomingAppointmentsItemWidget(),
+            );
+          }),
     );
   }
 }

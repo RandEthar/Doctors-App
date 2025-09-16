@@ -12,6 +12,5 @@ void setup() {
 
   getIt.registerSingleton<ApiService>(ApiService(dio: dio));
   getIt.registerSingleton<AuthRepoImpl>(
-      
-         AuthRepoImpl(apiService:getIt.get<ApiService>()));
+      AuthRepoImpl(apiService: getIt.get<ApiService>()));
 }

@@ -5,11 +5,6 @@ import 'package:doctors_app/core/util/app_text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-
-
-
-
-
 class RatingandDateWidget extends StatelessWidget {
   const RatingandDateWidget({
     super.key,
@@ -21,8 +16,7 @@ class RatingandDateWidget extends StatelessWidget {
       children: [
         Text(
           '4.8',
-          style: AppTextStyle.medium14
-              .copyWith(color: AppColor.darkerBlue),
+          style: AppTextStyle.medium14.copyWith(color: AppColor.darkerBlue),
         ),
         const SizedBox(
           width: 4,
@@ -49,8 +43,8 @@ class RatingandDateWidget extends StatelessWidget {
             ),
             Text(
               '10:30am - 5:30pm',
-              style: AppTextStyle.medium14
-                  .copyWith(color: AppColor.blueGrayDark),
+              style:
+                  AppTextStyle.medium14.copyWith(color: AppColor.blueGrayDark),
             )
           ],
         )

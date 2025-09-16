@@ -3,7 +3,13 @@ import 'package:doctors_app/core/util/app_text_style.dart';
 import 'package:flutter/material.dart';
 
 class TextFormFieldApp extends StatelessWidget {
-  const TextFormFieldApp({super.key, required this.hintText, this.suffixIcon, this.obscureText=false, required this.controller, required this.validator});
+  const TextFormFieldApp(
+      {super.key,
+      required this.hintText,
+      this.suffixIcon,
+      this.obscureText = false,
+      required this.controller,
+      required this.validator});
   final String hintText;
   final Widget? suffixIcon;
   final bool obscureText;
@@ -12,37 +18,35 @@ class TextFormFieldApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      controller:controller ,
-      validator:validator,
-      obscureText:obscureText ,
+      controller: controller,
+      validator: validator,
+      obscureText: obscureText,
       decoration: InputDecoration(
-          filled: true,
-          fillColor: AppColor.backgroundGrey,
-          hintText: hintText,
-          hintStyle: AppTextStyle.regular16.copyWith(
-               color: const Color(0xFFB2BCC8),
-          ),
-          suffixIcon: suffixIcon,
-          disabledBorder: buildOutlineInputBorder(),
-          focusedBorder:buildOutlineInputBorder(),
-          enabledBorder: buildOutlineInputBorder(),
-          errorBorder:buildOutlineInputBorderError(),
-          focusedErrorBorder: buildOutlineInputBorderError(),
-          
-          
-          
-          ),
+        filled: true,
+        fillColor: AppColor.backgroundGrey,
+        hintText: hintText,
+        hintStyle: AppTextStyle.regular16.copyWith(
+          color: const Color(0xFFB2BCC8),
+        ),
+        suffixIcon: suffixIcon,
+        disabledBorder: buildOutlineInputBorder(),
+        focusedBorder: buildOutlineInputBorder(),
+        enabledBorder: buildOutlineInputBorder(),
+        errorBorder: buildOutlineInputBorderError(),
+        focusedErrorBorder: buildOutlineInputBorderError(),
+      ),
     );
   }
 
   OutlineInputBorder buildOutlineInputBorder() {
     return OutlineInputBorder(
-            borderRadius: BorderRadius.circular(16),
-            borderSide: const BorderSide(color: AppColor.lightGrey));
+        borderRadius: BorderRadius.circular(16),
+        borderSide: const BorderSide(color: AppColor.lightGrey));
   }
-    OutlineInputBorder buildOutlineInputBorderError() {
+
+  OutlineInputBorder buildOutlineInputBorderError() {
     return OutlineInputBorder(
-            borderRadius: BorderRadius.circular(16),
-            borderSide: const BorderSide(color:Colors.red));
+        borderRadius: BorderRadius.circular(16),
+        borderSide: const BorderSide(color: Colors.red));
   }
 }

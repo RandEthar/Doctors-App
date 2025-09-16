@@ -30,11 +30,12 @@ class AuthRepoImpl extends AuthRepo {
   }
 
   @override
-  Future<Either<Failure, AuthResponse>> signupWithEmailAndPassword(SignupRequestBody signupRequestBody) async{
+  Future<Either<Failure, AuthResponse>> signupWithEmailAndPassword(
+      SignupRequestBody signupRequestBody) async {
     try {
       final data = await apiService.post(
         endPoint: ApiConstants.register,
-        data:  signupRequestBody.toJson(),
+        data: signupRequestBody.toJson(),
       );
       return Right(AuthResponse.fromJson(data));
     } on DioException catch (e) {
@@ -43,7 +44,4 @@ class AuthRepoImpl extends AuthRepo {
       return Left(ServerFailure(e.toString()));
     }
   }
-  
- 
 }
-

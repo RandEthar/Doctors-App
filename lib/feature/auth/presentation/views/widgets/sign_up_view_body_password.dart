@@ -86,7 +86,7 @@ class _SignUpViewBodyPasswordState extends State<SignUpViewBodyPassword> {
                   passwordValidation(value);
                 },
               ),
-                 const SizedBox(
+              const SizedBox(
                 height: 24,
               ),
               PasswordValidation(
@@ -130,7 +130,7 @@ class _SignUpViewBodyPasswordState extends State<SignUpViewBodyPassword> {
               ButtonApp(
                 text: "Sign Up",
                 onTap: () {
-                validateThenLogin(context);
+                  validateThenLogin(context);
                 },
               ),
               const SizedBox(
@@ -153,8 +153,6 @@ void validateThenLogin(BuildContext context) {
       .passwordKey
       .currentState!
       .validate()) {
-    context
-        .read<SignupWithEmailAndPasswordCubit>().signupWithEmailAndPasword();
-       
+    context.read<SignupWithEmailAndPasswordCubit>().signupWithEmailAndPasword();
   }
 }

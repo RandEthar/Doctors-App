@@ -1,6 +1,3 @@
-
-
-
 import 'package:doctors_app/core/util/app_colors.dart';
 import 'package:doctors_app/core/util/app_text_style.dart';
 import 'package:flutter/material.dart';
@@ -23,8 +20,7 @@ class CustomOrWidget extends StatelessWidget {
           )),
           Text(
             ' Or ',
-            style:
-                AppTextStyle.regular14.copyWith(color: AppColor.darkGrey),
+            style: AppTextStyle.regular14.copyWith(color: AppColor.darkGrey),
           ),
           const Expanded(
               child: Divider(

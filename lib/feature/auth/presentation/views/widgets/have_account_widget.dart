@@ -11,24 +11,22 @@ class HaveAccountWidget extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-           Text(
-      textAlign: TextAlign.center,
-    'Already have an account? ',
-      style: AppTextStyle.regular14.copyWith(
-        color: AppColor.darkGrey 
-      ),
-    ),
+        Text(
+          textAlign: TextAlign.center,
+          'Already have an account? ',
+          style: AppTextStyle.regular14.copyWith(color: AppColor.darkGrey),
+        ),
         GestureDetector(
-          onTap: (){
+          onTap: () {
             Navigator.pushNamed(context, SiginViewEmail.routeName);
           },
           child: Text(
-                textAlign: TextAlign.center,
-              ' Sign In',
-                style: AppTextStyle.regular16.copyWith(
-                 color:   const Color(0xFF32384B),
-                ),
-              ),
+            textAlign: TextAlign.center,
+            ' Sign In',
+            style: AppTextStyle.regular16.copyWith(
+              color: const Color(0xFF32384B),
+            ),
+          ),
         )
       ],
     );
