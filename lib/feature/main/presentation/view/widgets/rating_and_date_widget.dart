@@ -1,6 +1,7 @@
 import 'package:doctors_app/core/util/app_colors.dart';
 import 'package:doctors_app/core/util/app_images.dart';
 import 'package:doctors_app/core/util/app_text_style.dart';
+import 'package:doctors_app/feature/main/domain/entites/doctor_entity.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -8,8 +9,9 @@ import 'package:flutter_svg/svg.dart';
 class RatingandDateWidget extends StatelessWidget {
   const RatingandDateWidget({
     super.key,
+    required this.doctor,
   });
-
+  final DoctorEntity doctor;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -42,7 +44,7 @@ class RatingandDateWidget extends StatelessWidget {
               width: 4,
             ),
             Text(
-              '10:30am - 5:30pm',
+              '${formatTime(text: doctor.startTime)} - ${formatTime(text: doctor.endTime)}',
               style:
                   AppTextStyle.medium14.copyWith(color: AppColor.blueGrayDark),
             )
@@ -51,4 +53,10 @@ class RatingandDateWidget extends StatelessWidget {
       ],
     );
   }
+}
+//"20:00:00 PM"
+
+String formatTime({required text}) {
+  final parts = text.split(":");
+  return parts[0] + ":" + parts[2];
 }

@@ -1,9 +1,8 @@
 import 'package:doctors_app/core/util/app_colors.dart';
 import 'package:doctors_app/core/util/app_text_style.dart';
 import 'package:doctors_app/feature/main/presentation/view/widgets/category_grid_view.dart';
-
 import 'package:doctors_app/feature/main/presentation/view/widgets/custom_home_header_widget.dart';
-import 'package:doctors_app/feature/main/presentation/view/widgets/doctors_list.dart';
+import 'package:doctors_app/feature/main/presentation/view/widgets/doctors_list_bloc_builder.dart';
 import 'package:doctors_app/feature/main/presentation/view/widgets/section_header.dart';
 import 'package:doctors_app/feature/main/presentation/view/widgets/upcoming_appointments_list_view.dart';
 import 'package:flutter/material.dart';
@@ -53,7 +52,7 @@ class HomeViewBody extends StatelessWidget {
             const SizedBox(
               height: 24,
             ),
-            const DoctorsList()
+            const DoctorsListBlocBuilder()
           ],
         ),
       ),

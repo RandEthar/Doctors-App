@@ -2,14 +2,15 @@ import 'package:doctors_app/core/util/app_colors.dart';
 
 import 'package:doctors_app/core/util/app_text_style.dart';
 import 'package:doctors_app/core/widgets/button_app.dart';
+import 'package:doctors_app/feature/main/domain/entites/doctor_entity.dart';
 import 'package:doctors_app/feature/main/presentation/view/widgets/custom_image_doctor_Widget.dart';
 import 'package:doctors_app/feature/main/presentation/view/widgets/rating_and_date_widget.dart';
 import 'package:doctors_app/feature/main/presentation/view/widgets/toggle_favorite_widget.dart';
 import 'package:flutter/material.dart';
 
 class CustomDoctorsItemWidget extends StatelessWidget {
-  const CustomDoctorsItemWidget({super.key});
-
+  const CustomDoctorsItemWidget({super.key, required this.doctor});
+final DoctorEntity doctor;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -41,19 +42,19 @@ class CustomDoctorsItemWidget extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "Jennifer Miller",
+                          doctor.name??"",
                             style: AppTextStyle.semiBold14
                                 .copyWith(color: AppColor.darkBlue),
                           ),
                           Text(
-                            'Pediatrician | Mercy Hospital',
+                            '${doctor.specialty} | Mercy Hospital',
                             style: AppTextStyle.regular14
                                 .copyWith(color: AppColor.blueGrey),
                           ),
                           const SizedBox(
                             height: 8,
                           ),
-                          RatingandDateWidget(),
+                          RatingandDateWidget(doctor: doctor,),
                         ],
                       ),
                     ],

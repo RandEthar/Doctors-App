@@ -1,7 +1,9 @@
+import 'package:doctors_app/feature/main/domain/entites/doctor_entity.dart';
+
 import 'city.dart';
 import 'specialization.dart';
 
-class DoctorModel {
+class DoctorModel extends DoctorEntity{
   int? id;
   String? name;
   String? email;
@@ -17,22 +19,30 @@ class DoctorModel {
   String? startTime;
   String? endTime;
 
-  DoctorModel({
-    this.id,
-    this.name,
-    this.email,
-    this.phone,
-    this.photo,
-    this.gender,
-    this.address,
-    this.description,
-    this.degree,
-    this.specialization,
-    this.city,
-    this.appointPrice,
-    this.startTime,
-    this.endTime,
-  });
+DoctorModel({
+  this.id,
+  this.name,
+  this.email,
+  this.phone,
+  this.photo,
+  this.gender,
+  this.address,
+  this.description,
+  this.degree,
+  this.specialization,
+  this.city,
+  this.appointPrice,
+  this.startTime,
+  this.endTime,
+}) : super(
+      id: id ?? 0,
+      name: name ?? '',
+      imageUrl: photo ?? '',
+      specialty: specialization?.name ?? '',
+      startTime: startTime ?? '',
+      endTime: endTime ?? '',
+    );
+
 
   factory DoctorModel.fromJson(Map<String, dynamic> json) => DoctorModel(
         id: json['id'] as int?,
