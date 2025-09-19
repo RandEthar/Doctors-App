@@ -8,9 +8,7 @@ import 'package:doctors_app/feature/auth/presentation/views/sigin_view_email.dar
 import 'package:doctors_app/feature/main/domain/entites/doctor_entity.dart';
 import 'package:doctors_app/feature/main/presentation/view/main_view.dart';
 import 'package:flutter/material.dart';
-
 import 'package:hive_flutter/adapters.dart';
-
 bool isLoggedInUser = false;
 
 Future<void> main() async {

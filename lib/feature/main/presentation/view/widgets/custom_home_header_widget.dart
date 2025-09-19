@@ -3,6 +3,7 @@ import 'package:doctors_app/core/helpers/sheard_pref_healper.dart';
 import 'package:doctors_app/core/util/app_colors.dart';
 import 'package:doctors_app/core/util/app_images.dart';
 import 'package:doctors_app/core/util/app_text_style.dart';
+import 'package:doctors_app/feature/search/presentation/views/search_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -33,17 +34,22 @@ class CustomHomeHeaderWidegt extends StatelessWidget {
               style: AppTextStyle.regular14.copyWith(color: AppColor.darkGrey),
             ),
             Text(
-              '${SharedPrefHelper.getString(SharedPrefKeys.userName)}',
+              SharedPrefHelper.getString(SharedPrefKeys.userName),
               style: AppTextStyle.medium16.copyWith(color: Colors.black),
             ),
           ],
         ),
         const Spacer(),
-        SvgPicture.asset(
-          Assets.imagesSearch,
-          height: 28,
-          width: 28,
-          fit: BoxFit.fill,
+        GestureDetector(
+          onTap: (){
+             Navigator.pushNamed(context, SearchView.routeName);
+          },
+          child: SvgPicture.asset(
+            Assets.imagesSearch,
+            height: 28,
+            width: 28,
+            fit: BoxFit.fill,
+          ),
         ),
         const SizedBox(
           width: 24,

@@ -5,10 +5,10 @@ import 'package:flutter/material.dart';
 class SectionHeader extends StatelessWidget {
   const SectionHeader({
     super.key,
-    required this.text,
+    required this.text, this.onTap,
   });
   final String text;
-
+ final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -19,9 +19,12 @@ class SectionHeader extends StatelessWidget {
           style: AppTextStyle.bold18.copyWith(color: AppColor.darkerBlue),
         ),
         const Spacer(),
-        Text(
-          'See all',
-          style: AppTextStyle.medium16.copyWith(color: AppColor.primary),
+        GestureDetector(
+          onTap:  onTap,
+          child: Text(
+            'See all',
+            style: AppTextStyle.medium16.copyWith(color: AppColor.primary),
+          ),
         ),
         const SizedBox(
           width: 24,

@@ -9,6 +9,7 @@ import 'package:doctors_app/feature/auth/presentation/views/sigin_view_password.
 import 'package:doctors_app/feature/auth/presentation/views/sign_up_view_detuils.dart';
 import 'package:doctors_app/feature/auth/presentation/views/sign_up_view_password.dart';
 import 'package:doctors_app/feature/main/presentation/view/main_view.dart';
+import 'package:doctors_app/feature/search/presentation/views/search_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -46,6 +47,10 @@ Route<dynamic>? onGenerateRoute(RouteSettings settings) {
           value: settings.arguments as SignupWithEmailAndPasswordCubit,
           child: const SignUpViewPassword(),
         ),
+      );
+       case SearchView.routeName:
+      return MaterialPageRoute(
+        builder: (context) =>const SearchView()
       );
     case MainView.routeName:
       return MaterialPageRoute(

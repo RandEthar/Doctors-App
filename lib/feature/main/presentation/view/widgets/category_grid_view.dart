@@ -1,8 +1,11 @@
 import 'package:doctors_app/core/util/app_colors.dart';
 import 'package:doctors_app/core/util/app_text_style.dart';
 import 'package:doctors_app/feature/main/domain/entites/categories_entity.dart';
+import 'package:doctors_app/feature/main/presentation/manger/doctors_cubit/doctors_cubit.dart';
+
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CategoryGridView extends StatefulWidget {
   const CategoryGridView({super.key});
@@ -25,6 +28,9 @@ class _CategoryGridViewState extends State<CategoryGridView> {
         final cat = entry.value;
         return GestureDetector(
           onTap: () {
+            context
+                .read<DoctorsCubit>()
+                .fetchDoctorsBySpcialization(index: index+1);
             setState(() {
               selectedIndex = index;
             });
@@ -34,6 +40,7 @@ class _CategoryGridViewState extends State<CategoryGridView> {
               color: AppColor.lightBlueBackground,
               shape: RoundedRectangleBorder(
                 side: BorderSide(
+                  width: 2,
                     color: selectedIndex == index
                         ? AppColor.primary
                         : AppColor.lightBlueBackground),

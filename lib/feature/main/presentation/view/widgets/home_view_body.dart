@@ -1,11 +1,11 @@
 import 'package:doctors_app/core/util/app_colors.dart';
 import 'package:doctors_app/core/util/app_text_style.dart';
-import 'package:doctors_app/feature/main/presentation/manger/fetch_all_doctor/fetch_all_doctor_cubit.dart';
+import 'package:doctors_app/feature/main/presentation/manger/doctors_cubit/doctors_cubit.dart';
 import 'package:doctors_app/feature/main/presentation/view/widgets/category_grid_view.dart';
 import 'package:doctors_app/feature/main/presentation/view/widgets/custom_home_header_widget.dart';
 import 'package:doctors_app/feature/main/presentation/view/widgets/doctors_list_bloc_builder.dart';
 import 'package:doctors_app/feature/main/presentation/view/widgets/section_header.dart';
-import 'package:doctors_app/feature/main/presentation/view/widgets/upcoming_appointments_list_view.dart';
+
 import 'package:doctors_app/feature/main/presentation/view/widgets/upcoming_appointments_list_view_bloc_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -32,7 +32,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
         if (!isLoading) {
           isLoading = true;
           await context
-              .read<FetchAllDoctorCubit>()
+              .read<DoctorsCubit>()
               .fetchAllDoctors(pageNumber: pageNumber++);
           isLoading = false;
         }
@@ -81,8 +81,11 @@ void dispose() {
             const SizedBox(
               height: 40,
             ),
-            const SectionHeader(
+            SectionHeader(
               text: "Find Doctors",
+              onTap: () {
+                context.read<DoctorsCubit>().fetchAllDoctors();
+              },
             ),
             const SizedBox(
               height: 24,

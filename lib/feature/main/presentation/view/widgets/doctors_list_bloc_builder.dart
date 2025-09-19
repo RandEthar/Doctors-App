@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:doctors_app/core/util/app_colors.dart';
-import 'package:doctors_app/feature/main/presentation/manger/fetch_all_doctor/fetch_all_doctor_cubit.dart';
+import 'package:doctors_app/feature/main/presentation/manger/doctors_cubit/doctors_cubit.dart';
 import 'package:doctors_app/feature/main/presentation/view/widgets/doctors_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -11,25 +11,27 @@ class DoctorsListBlocBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<FetchAllDoctorCubit, FetchAllDoctorState>(
+    return BlocBuilder<DoctorsCubit, DoctorsState>(
       buildWhen: (previous, current) =>
-          current is FetchAllDoctorLoading ||
-          current is FetchAllDoctorSuccess ||
-          current is FetchAllDoctorFailure,
+          current is DoctorsLoading ||
+          current is DoctorsSuccess ||
+          current is DoctorsFailure,
       builder: (context, state) {
-        if (state is FetchAllDoctorSuccess) {
+        if (state is DoctorsSuccess) {
               log("doctors list  ${state.doctors.length.toString()}");
           return DoctorsList(doctors: state.doctors);
-        } else if (state is FetchAllDoctorFailure) {
+        } else if (state is DoctorsFailure) {
      
           return Text(state.errMessage);
 
         } else {
-          return const SizedBox(
-            height: 30,
-            width: 30,
-            child: CircularProgressIndicator(
-              color: AppColor.primary,
+          return const Center(
+            child: SizedBox(
+              height: 30,
+              width: 30,
+              child: CircularProgressIndicator(
+                color: AppColor.primary,
+              ),
             ),
           );
         }

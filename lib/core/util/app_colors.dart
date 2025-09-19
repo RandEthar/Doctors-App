@@ -15,4 +15,5 @@ class AppColor {
   static const Color red = Color(0xffED5E5E); // أحمر
   static const Color blueGrayDark = Color(0xFF7D8994); // أزرق رمادي غامق
   static const Color blueGrayLight = Color(0xFFE9F0FF); // أزرق رمادي فاتح
+static const Color blueGreyAlt =   Color(0xFFAAB5C3); // أزرق رمادي
 }
