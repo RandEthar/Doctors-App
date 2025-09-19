@@ -1,3 +1,5 @@
+import 'package:doctors_app/core/helpers/constant.dart';
+import 'package:doctors_app/core/helpers/sheard_pref_healper.dart';
 import 'package:doctors_app/core/util/app_colors.dart';
 import 'package:doctors_app/core/util/app_images.dart';
 import 'package:doctors_app/core/util/app_text_style.dart';
@@ -12,25 +14,27 @@ class CustomHomeHeaderWidegt extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+
       children: [
         Image.asset(
-          Assets.imagesPic,
+          Assets.imagesImageProfile,
           height: 48,
           width: 48,
-          fit: BoxFit.fill,
+          fit: BoxFit.scaleDown,
         ),
         const SizedBox(
           width: 8,
         ),
         Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               "Welcome Back",
               style: AppTextStyle.regular14.copyWith(color: AppColor.darkGrey),
             ),
             Text(
-              'Andrew Smith',
-              style: AppTextStyle.regular14.copyWith(color: AppColor.darkBlue),
+              '${SharedPrefHelper.getString(SharedPrefKeys.userName)}',
+              style: AppTextStyle.medium16.copyWith(color: Colors.black),
             ),
           ],
         ),

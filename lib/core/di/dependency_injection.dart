@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:doctors_app/core/services/api_service.dart';
 import 'package:doctors_app/core/services/dio_factory.dart';
 import 'package:doctors_app/feature/auth/data/repos/auth_repo_impl.dart';
+import 'package:doctors_app/feature/main/data/data_source/home_local_data_source.dart';
 import 'package:doctors_app/feature/main/data/data_source/home_remote_data_source.dart';
 import 'package:doctors_app/feature/main/data/repos/doctors_repo_impl.dart';
 import 'package:doctors_app/feature/main/domain/repos/doctor_repo.dart';
@@ -17,6 +18,7 @@ Future<void> setup() async{
   getIt.registerSingleton<AuthRepoImpl>(
       AuthRepoImpl(apiService: getIt.get<ApiService>()));
   getIt.registerSingleton<DoctorRepo>(DoctorsRepoImpl(
+    homeLocalDataSource: HomeLocalDataSourceImpl(),
       homeRemoteDataSource:
           HomeRemoteDataSourceImpl(apiService: getIt.get<ApiService>())));
 }

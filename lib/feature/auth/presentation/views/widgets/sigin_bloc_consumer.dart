@@ -25,9 +25,13 @@ class LoginBlocConsumer extends StatelessWidget {
           );
         }
       },
+  
       builder: (context, state) {
         return ModalProgressHUD(
           color: AppColor.primary,
+          progressIndicator:const CircularProgressIndicator(
+            color: AppColor.primary,
+          ),
           inAsyncCall: state is SigninWithEmailAndPasswordLoading,
           child: const SiginViewPasswordBody(),
         );

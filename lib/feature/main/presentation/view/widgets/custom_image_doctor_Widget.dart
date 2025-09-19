@@ -14,7 +14,7 @@ class CustomImageDoctor extends StatelessWidget {
       decoration: const ShapeDecoration(
         image: DecorationImage(
           image: AssetImage(
-            Assets.imagesPic,
+           Assets.imagesImageDoctor,
           ),
           fit: BoxFit.scaleDown,
         ),

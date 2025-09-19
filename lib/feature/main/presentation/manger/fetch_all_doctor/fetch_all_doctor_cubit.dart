@@ -11,9 +11,9 @@ class FetchAllDoctorCubit extends Cubit<FetchAllDoctorState> {
 
   final FetchAllDoctorsUseCase fetchAllDoctorsUseCase;
 
-  Future<void> fetchAllDoctors() async {
+  Future<void> fetchAllDoctors({ int pageNumber=0}) async {
     emit(FetchAllDoctorLoading());
-    var respons = await fetchAllDoctorsUseCase.call();
+    var respons = await fetchAllDoctorsUseCase.call(param: pageNumber);
     respons.fold((error) {
       emit(FetchAllDoctorFailure(errMessage: error.message));
     }, (data) {

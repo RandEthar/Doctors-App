@@ -28,14 +28,21 @@ class SigninWithEmailAndPasswordCubit
             email: emailController.text, password: passwordController.text));
     response.fold((error) {
       emit(SigninWithEmailAndPasswordFailure(errMessage: error.message));
-    }, (data) {
-       saveUserToken(userToken:data.data.token );
+    }, (data) async{
+     await  saveUserToken(userToken:data.data.token );
+     await saveUserName(saveUserName:data.data.username );
       emit(SigninWithEmailAndPasswordSuccess(loginResponse: data));
     });
   }
 
   Future<void> saveUserToken({required String userToken}) async {
     await SharedPrefHelper.setData(SharedPrefKeys.userToken, userToken);
+   
    DioFactory.setTokenAfterLogin(token: userToken);
   }
+    Future<void> saveUserName({required String saveUserName}) async {
+    await SharedPrefHelper.setData(SharedPrefKeys.userName, saveUserName);
+   
+  }
+
 }

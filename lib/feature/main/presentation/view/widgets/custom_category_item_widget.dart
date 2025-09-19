@@ -1,46 +1,46 @@
 import 'package:doctors_app/core/util/app_colors.dart';
-import 'package:doctors_app/core/util/app_images.dart';
 import 'package:doctors_app/core/util/app_text_style.dart';
-import 'package:doctors_app/feature/main/domain/entites/categories_entity.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
-class CustomCategoryItemWidget extends StatelessWidget {
-  const CustomCategoryItemWidget({super.key, required this.category});
-  final CategoriesEntity category;
+class CustomCategoryItemWidget extends StatefulWidget {
+  const CustomCategoryItemWidget({super.key, required this.specialization, required this.index});
+  final String specialization ;
+final int index;
+  @override
+  State<CustomCategoryItemWidget> createState() => _CustomCategoryItemWidgetState();
+}
+
+class _CustomCategoryItemWidgetState extends State<CustomCategoryItemWidget> {
+  int selectedIndex=-1;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 72,
-      width: 72,
-      decoration: ShapeDecoration(
-        color: AppColor.lightBlueBackground,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-      ),
-      child: Center(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 12),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SvgPicture.asset(
-                category.image,
-                height: 28,
-                width: 28,
-                fit: BoxFit.fill,
-              ),
-              // const SizedBox(
-              //   height: 4,
-              // ),
-              Text(
-                category.name,
-                style:
-                    AppTextStyle.regular14.copyWith(color: AppColor.darkBlue),
-              ),
-            ],
-          ),
+    return GestureDetector(
+      onTap: (){
+         setState(() {
+                  selectedIndex=widget.index;
+         });
+      },
+      child: Container(
+              
+        decoration: ShapeDecoration(
+          
+          color: AppColor.lightBlueBackground,
+          shape: RoundedRectangleBorder(
+            side:BorderSide(
+              color:selectedIndex==widget.index? AppColor.primary:AppColor.lightBlueBackground
+            ),
+            borderRadius: BorderRadius.circular(16)),
         ),
-      ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 12,vertical: 8),
+          child: Text(
+               widget.specialization,
+                style:
+                    AppTextStyle.medium14.copyWith(color: AppColor.darkBlue),
+              ),
+        )
+          ),
     );
+    
   }
 }

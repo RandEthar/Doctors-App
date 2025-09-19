@@ -41,6 +41,7 @@ DoctorModel({
       specialty: specialization?.name ?? '',
       startTime: startTime ?? '',
       endTime: endTime ?? '',
+      specialtyId: specialization?.id?? 0
     );
 
 

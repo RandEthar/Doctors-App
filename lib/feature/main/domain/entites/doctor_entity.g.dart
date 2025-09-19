@@ -23,13 +23,14 @@ class DoctorEntityAdapter extends TypeAdapter<DoctorEntity> {
       imageUrl: fields[3] as String?,
       startTime: fields[4] as String?,
       endTime: fields[5] as String?,
+      specialtyId: fields[6] as int?,
     );
   }
 
   @override
   void write(BinaryWriter writer, DoctorEntity obj) {
     writer
-      ..writeByte(6)
+      ..writeByte(7)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
@@ -41,7 +42,9 @@ class DoctorEntityAdapter extends TypeAdapter<DoctorEntity> {
       ..writeByte(4)
       ..write(obj.startTime)
       ..writeByte(5)
-      ..write(obj.endTime);
+      ..write(obj.endTime)
+      ..writeByte(6)
+      ..write(obj.specialtyId);
   }
 
   @override

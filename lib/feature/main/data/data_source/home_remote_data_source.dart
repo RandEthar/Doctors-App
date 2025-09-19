@@ -6,7 +6,8 @@ import 'package:doctors_app/feature/main/domain/entites/doctor_entity.dart';
 import 'package:hive/hive.dart';
 
 abstract class HomeRemoteDataSource {
-  Future<List<DoctorEntity>> fetchAllDoctors();
+  Future<List<DoctorEntity>> fetchAllDoctors({int pageNumber = 0});
+     Future<List<DoctorEntity>> fetchDoctorsBySpecialization({required int specialization});
 }
 
 class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
@@ -14,7 +15,7 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
 
   HomeRemoteDataSourceImpl({required this.apiService});
   @override
-  Future<List<DoctorEntity>> fetchAllDoctors() async {
+  Future<List<DoctorEntity>> fetchAllDoctors({int pageNumber = 0}) async {
     var data = await apiService.get(endPoint: ApiConstants.allDoctors);
     List<DoctorEntity> doctors = getDoctorsList(data);
     saveAllDoctors(doctors);
@@ -32,5 +33,13 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
       doctors.add(DoctorModel.fromJson(doctor));
     }
     return doctors;
+  }
+  
+  @override
+  Future<List<DoctorEntity>> fetchDoctorsBySpecialization({required int specialization}) async{
+   var data=await apiService.get(endPoint: ApiConstants.filterDoctors(index: specialization));
+      List<DoctorEntity> doctors = getDoctorsList(data);
+    return doctors;
+
   }
 }

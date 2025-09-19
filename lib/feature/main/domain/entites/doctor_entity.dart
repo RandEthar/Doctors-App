@@ -15,12 +15,9 @@ class DoctorEntity {
   final String? startTime;
   @HiveField(5)
   final String? endTime;
+  @HiveField(6)
+  final int? specialtyId;
 
-  DoctorEntity(
-      {required this.id,
-      required this.name,
-      required this.specialty,
-      required this.imageUrl,
-      required this.startTime,
-      required this.endTime});
+  DoctorEntity({ this.id,  this.name, this.specialty,  this.imageUrl,  this.startTime,  this.endTime,  this.specialtyId});
+
 }

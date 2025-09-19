@@ -16,6 +16,7 @@ bool isLoggedInUser = false;
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
+  await SharedPrefHelper.init();
   Hive.registerAdapter(DoctorEntityAdapter());
   await Hive.openBox<DoctorEntity>(HiveConstant.doctorsBox);
   await setup();

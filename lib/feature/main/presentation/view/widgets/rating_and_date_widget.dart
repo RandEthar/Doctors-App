@@ -1,3 +1,4 @@
+import 'package:doctors_app/core/helpers/format_time.dart';
 import 'package:doctors_app/core/util/app_colors.dart';
 import 'package:doctors_app/core/util/app_images.dart';
 import 'package:doctors_app/core/util/app_text_style.dart';
@@ -56,7 +57,4 @@ class RatingandDateWidget extends StatelessWidget {
 }
 //"20:00:00 PM"
 
-String formatTime({required text}) {
-  final parts = text.split(":");
-  return parts[0] + ":" + parts[2];
-}
+
