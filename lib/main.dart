@@ -39,7 +39,7 @@ class DoctorsApp extends StatelessWidget {
 }
 
 Future<void> checkIfUserIsLoggedIn() async {
-  String userToken = await SharedPrefHelper.getString(SharedPrefKeys.userToken);
+  String userToken = await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken);
   if (!userToken.isNullOrEmpty()) {
     isLoggedInUser = true;
   } else {

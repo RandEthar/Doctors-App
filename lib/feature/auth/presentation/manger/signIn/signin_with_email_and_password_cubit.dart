@@ -41,7 +41,7 @@ class SigninWithEmailAndPasswordCubit
    DioFactory.setTokenAfterLogin(token: userToken);
   }
     Future<void> saveUserName({required String saveUserName}) async {
-    await SharedPrefHelper.setData(SharedPrefKeys.userName, saveUserName);
+    await SharedPrefHelper.setSecuredString(SharedPrefKeys.userName, saveUserName);
    
   }
 
