@@ -57,6 +57,16 @@ Dependency injection is managed using the `get_it` package, which decouples the 
     ```bash
     flutter run
     ```
+<h2 align="center">Login UI</h2>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/RandEthar/Doctors-App/refs/heads/main/Screenshot_1757767198.png" alt="screenshot1" width="200" style="margin: 0 30px;"/>
+  <img src="https://raw.githubusercontent.com/RandEthar/Doctors-App/refs/heads/main/Screenshot_1758392248.png" alt="screenshot2" width="200" style="margin: 0 30px;"/>
+  <img src="https://raw.githubusercontent.com/RandEthar/Doctors-App/refs/heads/main/Screenshot_1758392224.png" alt="screenshot3" width="200" style="margin: 0 30px;"/>
+</p>
+
+
+
 
 ## 📂 Project Structure
 
@@ -86,3 +96,8 @@ lib/
         ├── data/
         ├── domain/
         └── presentation/
+
+
+
+
+
