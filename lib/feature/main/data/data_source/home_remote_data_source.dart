@@ -1,3 +1,4 @@
+import 'package:doctors_app/core/helpers/get_doctors_list.dart';
 import 'package:doctors_app/core/helpers/hive_constant.dart';
 import 'package:doctors_app/core/services/api_constants.dart';
 import 'package:doctors_app/core/services/api_service.dart';
@@ -27,13 +28,7 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
     boxDoctoes.addAll(doctors);
   }
 
-  List<DoctorEntity> getDoctorsList(Map<String, dynamic> data) {
-     List<DoctorEntity> doctors = [];
-    for (var doctor in data["data"]) {
-      doctors.add(DoctorModel.fromJson(doctor));
-    }
-    return doctors;
-  }
+ 
   
   @override
   Future<List<DoctorEntity>> fetchDoctorsBySpecialization({required int specialization}) async{
