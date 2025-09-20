@@ -2,7 +2,6 @@ import 'package:doctors_app/core/helpers/get_doctors_list.dart';
 import 'package:doctors_app/core/helpers/hive_constant.dart';
 import 'package:doctors_app/core/services/api_constants.dart';
 import 'package:doctors_app/core/services/api_service.dart';
-import 'package:doctors_app/feature/main/data/models/doctor_model/doctor_model.dart';
 import 'package:doctors_app/feature/main/domain/entites/doctor_entity.dart';
 import 'package:hive/hive.dart';
 

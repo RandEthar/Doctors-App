@@ -9,6 +9,10 @@ import 'package:doctors_app/feature/auth/presentation/views/sigin_view_password.
 import 'package:doctors_app/feature/auth/presentation/views/sign_up_view_detuils.dart';
 import 'package:doctors_app/feature/auth/presentation/views/sign_up_view_password.dart';
 import 'package:doctors_app/feature/main/presentation/view/main_view.dart';
+import 'package:doctors_app/feature/search/data/repos/search_repo_imple.dart';
+import 'package:doctors_app/feature/search/domain/repos/search_repo.dart';
+import 'package:doctors_app/feature/search/domain/usecase/search_doctor_by_name_use_case.dart';
+import 'package:doctors_app/feature/search/presentation/manger/cubit/search_cubit.dart';
 import 'package:doctors_app/feature/search/presentation/views/search_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -48,10 +52,13 @@ Route<dynamic>? onGenerateRoute(RouteSettings settings) {
           child: const SignUpViewPassword(),
         ),
       );
-       case SearchView.routeName:
+    case SearchView.routeName:
       return MaterialPageRoute(
-        builder: (context) =>const SearchView()
-      );
+          builder: (context) => BlocProvider(
+                create: (context) => SearchCubit(SearchDoctorByNameUseCase(
+                    searchRepo: getIt.get<SearchRepo>())),
+                child: const SearchView(),
+              ));
     case MainView.routeName:
       return MaterialPageRoute(
         builder: (context) => const MainView(),

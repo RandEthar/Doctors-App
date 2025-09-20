@@ -8,7 +8,12 @@ class ResultListView extends StatelessWidget {
   final List<DoctorEntity> doctors;
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(itemBuilder: (constex, index) {
+    return ListView.builder(
+       itemCount:doctors.length ,
+       physics:const NeverScrollableScrollPhysics(),
+       shrinkWrap: true,
+      
+      itemBuilder: (constex, index) {
       return Padding(
         padding: const EdgeInsets.only(bottom: 16),
         child: CustomDoctorsItemWidget(

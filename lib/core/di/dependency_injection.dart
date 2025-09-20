@@ -6,19 +6,25 @@ import 'package:doctors_app/feature/main/data/data_source/home_local_data_source
 import 'package:doctors_app/feature/main/data/data_source/home_remote_data_source.dart';
 import 'package:doctors_app/feature/main/data/repos/doctors_repo_impl.dart';
 import 'package:doctors_app/feature/main/domain/repos/doctor_repo.dart';
+import 'package:doctors_app/feature/search/data/data_source/search_remote_data_source.dart';
+import 'package:doctors_app/feature/search/data/repos/search_repo_imple.dart';
+import 'package:doctors_app/feature/search/domain/repos/search_repo.dart';
 
 import 'package:get_it/get_it.dart';
 
 final getIt = GetIt.instance;
 
-Future<void> setup() async{
-  Dio dio =await DioFactory.getDio();
+Future<void> setup() async {
+  Dio dio = await DioFactory.getDio();
 
   getIt.registerSingleton<ApiService>(ApiService(dio: dio));
   getIt.registerSingleton<AuthRepoImpl>(
       AuthRepoImpl(apiService: getIt.get<ApiService>()));
   getIt.registerSingleton<DoctorRepo>(DoctorsRepoImpl(
-    homeLocalDataSource: HomeLocalDataSourceImpl(),
+      homeLocalDataSource: HomeLocalDataSourceImpl(),
       homeRemoteDataSource:
           HomeRemoteDataSourceImpl(apiService: getIt.get<ApiService>())));
+  getIt.registerSingleton<SearchRepo>(SearchRepoImple(
+      searchRemoteDataSource:
+          SearchRemoteDataSourceImple(apiService: getIt.get<ApiService>())));
 }

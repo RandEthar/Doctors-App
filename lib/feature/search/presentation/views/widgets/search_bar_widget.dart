@@ -1,7 +1,9 @@
 import 'package:doctors_app/core/util/app_colors.dart';
 import 'package:doctors_app/core/util/app_images.dart';
 import 'package:doctors_app/core/util/app_text_style.dart';
+import 'package:doctors_app/feature/search/presentation/manger/cubit/search_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 
 class SearchBarWidget extends StatefulWidget {
@@ -34,6 +36,7 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onChanged: (value) => context.read<SearchCubit>().searchDoctorByName(name: value),
       controller:controller,
       cursorColor: AppColor.blueGreyAlt,
       decoration: InputDecoration(

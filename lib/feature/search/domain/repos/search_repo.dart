@@ -4,5 +4,5 @@ import 'package:doctors_app/feature/main/domain/entites/doctor_entity.dart';
 
 
 abstract class SearchRepo {
-  Future<Either<Failure, List<DoctorEntity>>> searchDoctorByName({String name});
+  Future<Either<Failure, List<DoctorEntity>>> searchDoctorByName({required  String name});
 }
